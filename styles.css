@@ -1,0 +1,494 @@
+/* -------------------------------
+   Estilos Globais
+--------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background-color: #fff;
+  line-height: 1.6;
+}
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+
+/* -------------------------------
+   Cabeçalho
+--------------------------------*/
+header {
+  background: #fff;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+}
+
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.logo-mark img {
+  width: 90px;
+  height: auto;
+  display: block;
+}
+
+
+nav.primary {
+  display: flex;
+  gap: 20px;
+}
+
+
+nav.primary a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+
+nav.primary a:hover {
+  color: #b76e79;
+}
+
+
+.access-tools {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+.access-tools button {
+  background: none;
+  border: 1px solid #b76e79;
+  color: #b76e79;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+
+.access-tools button:hover {
+  background: #b76e79;
+  color: #fff;
+}
+
+
+.access-tools .cta {
+  background: #b76e79;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+}
+
+
+.access-tools .cta:hover {
+  background: #a25b65;
+}
+
+
+/* -------------------------------
+   Seção Principal (Hero)
+--------------------------------*/
+.hero {
+  background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)),
+              url('https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1600&q=80') center/cover;
+  text-align: center;
+  padding: 100px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.6rem;
+  color: #b76e79;
+  margin-bottom: 10px;
+}
+
+
+.hero p {
+  max-width: 600px;
+  margin: 0 auto 30px;
+  font-size: 1rem;
+  color: #555;
+}
+
+
+/* -------------------------------
+   Formulário de busca
+--------------------------------*/
+.search-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  gap: 10px;
+}
+
+
+.search-card .input {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px 10px;
+  min-width: 180px;
+}
+
+
+.search-card input,
+.search-card select {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 0.95rem;
+  background: none;
+}
+
+
+.btn-search {
+  background: #b76e79;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+
+.btn-search:hover {
+  background: #a25b65;
+}
+
+
+/* -------------------------------
+   Seções
+--------------------------------*/
+.section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+
+.section h2 {
+  font-family: 'Playfair Display', serif;
+  color: #b76e79;
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+}
+
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 30px 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+
+.card h3 {
+  color: #b76e79;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+
+.card p {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 8px 0 15px;
+}
+
+
+.card-btn {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  background: #b76e79;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+
+.card-btn:hover {
+  background: #a25b65;
+}
+
+
+/* -------------------------------
+   Depoimentos
+--------------------------------*/
+.testimonials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 40px;
+}
+
+
+.testimonial {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  padding: 25px;
+  max-width: 330px;
+  text-align: left;
+}
+
+
+.testimonial .text {
+  font-style: italic;
+  color: #444;
+}
+
+
+.testimonial .name {
+  margin-top: 10px;
+  color: #b76e79;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+
+/* -------------------------------
+   Rodapé
+--------------------------------*/
+footer {
+  background: #fafafa;
+  border-top: 1px solid #eee;
+  padding: 50px 20px 20px;
+}
+
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 30px;
+}
+
+
+footer h5 {
+  color: #b76e79;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+
+footer a {
+  display: block;
+  color: #444;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin: 4px 0;
+}
+
+
+footer a:hover {
+  color: #b76e79;
+}
+
+
+footer .copyright {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #777;
+  margin-top: 30px;
+}
+
+
+/* -------------------------------
+   Responsividade
+--------------------------------*/
+@media (max-width: 768px) {
+  .topbar {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+
+  nav.primary {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+
+  .hero {
+    padding: 60px 10px;
+  }
+
+
+  .search-card {
+    flex-direction: column;
+  }
+}
+
+
+/* -------------------------------
+   Largura do site e cabeçalho ajustado
+--------------------------------*/
+.container {
+  max-width: 1600px; /* aumentei de 1200 → 1600 */
+  margin: 0 auto;
+  padding: 0 60px; /* mais espaço nas laterais */
+}
+
+/* Cabeçalho mais centralizado e fluido */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 20px;
+}
+
+/* Garantir que o menu e botões fiquem bem distribuídos */
+nav.primary {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+/* Ferramentas e botões no canto direito */
+.access-tools {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* Botões Login e Cadastro */
+.login-btn,
+.signup-btn {
+  background: none;
+  border: 1px solid #b76e79;
+  color: #b76e79;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+  background: #b76e79;
+  color: #fff;
+}
+
+.signup-btn {
+  background: #b76e79;
+  color: #fff;
+  font-weight: 600;
+}
+
+.signup-btn:hover {
+  background: #a25b65;
+}
+
+
+/* Botões de Login e Cadastro */
+.login-btn,
+.signup-btn {
+  background: none;
+  border: 1px solid #b76e79;
+  color: #b76e79;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+  background: #b76e79;
+  color: #fff;
+}
+
+.signup-btn {
+  background: #b76e79;
+  color: #fff;
+  font-weight: 600;
+}
+
+.signup-btn:hover {
+  background: #a25b65;
+}
+
+/* Espaçamento melhor no grupo de botões */
+.access-tools {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+/* Contraste Alto */
+.high-contrast {
+  background-color: #000;
+  color: #fff;
+}
+
+.high-contrast a {
+  color: #0ff;
+}
+
+.large-font {
+  font-size: 1.2em;
+}
+

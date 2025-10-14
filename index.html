@@ -1,0 +1,185 @@
+ <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+
+<body>
+  <!-- ===================== -->
+  <!-- Cabeçalho -->
+  <!-- ===================== -->
+<header class="container" role="banner">
+  <div class="topbar">
+    <div class="brand" aria-label="Mabelleshine - Logotipo">
+      <div class="logo-mark" aria-hidden="true">
+        <img src="mabelleshine-removebg-preview.png" alt="Logotipo Mabelleshine" />
+      </div>
+    </div>
+
+    <nav class="primary" role="navigation" aria-label="Menu principal">
+      <a href="#" aria-current="page">Início</a>
+      <a href="#">Sobre Nós</a>
+      <a href="#">Serviços</a>
+      <a href="#">Blog</a>
+      <a href="#">Contato</a>
+    </nav>
+
+    <div class="access-tools" role="group" aria-label="Ferramentas de acessibilidade">
+      <button id="btnContrast" title="Alto contraste">Contraste</button>
+      <button id="btnFont" title="Aumentar fonte">A+</button>
+      <button class="cta" id="btnReserve" onclick="document.querySelector('#search-location').focus()">Reservar Agora</button>
+      <button class="login-btn">Login</button>
+      <button class="signup-btn">Cadastro</button>
+    </div>
+  </div>
+</header>
+
+
+  <!-- ===================== -->
+  <!-- Seção Hero -->
+  <!-- ===================== -->
+  <main class="container" role="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title">Reserve momentos que brilham</h1>
+      <p>Experiências inesquecíveis em um só clique. Encontre hotéis, restaurantes, spas e serviços selecionados para tornar cada momento especial.</p>
+
+
+      <form class="search-card" role="search" aria-label="Pesquisar estabelecimento ou serviço" onsubmit="handleSearch(event)">
+        <div class="input" role="group" aria-label="Local ou serviço">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M21 21l-4.35-4.35" stroke="#bbb" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+          <input id="search-location" type="text" placeholder="Local / Serviço desejado" aria-label="Local ou serviço" />
+        </div>
+
+
+        <div class="input" role="group" aria-label="Data">
+          <input id="search-date" type="date" aria-label="Data da reserva" />
+        </div>
+
+
+        <div class="input" role="group" aria-label="Número de pessoas">
+          <select id="search-people" aria-label="Número de pessoas">
+            <option value="1">1 pessoa</option>
+            <option value="2">2 pessoas</option>
+            <option value="3">3 pessoas</option>
+            <option value="4">4 pessoas</option>
+            <option value="5">5 pessoas</option>
+            <option value="6">6+ pessoas</option>
+          </select>
+        </div>
+
+
+        <button class="btn-search" type="submit" aria-label="Buscar">Buscar</button>
+      </form>
+    </section>
+
+
+    <!-- ===================== -->
+    <!-- Categorias -->
+    <!-- ===================== -->
+    <section class="section container" aria-labelledby="cat-title">
+      <h2 id="cat-title">Escolha o tipo de experiência que combina com você</h2>
+
+
+      <div class="cards-grid" role="list">
+        <article class="card" role="listitem">
+          <h3>Hotéis e Pousadas</h3>
+          <p>Encontre acomodações selecionadas com experiências únicas.</p>
+          <a class="card-btn" href="#">Ver opções</a>
+        </article>
+
+
+        <article class="card" role="listitem">
+          <h3>Restaurantes</h3>
+          <p>Reservas em locais recomendados para jantares e almoços especiais.</p>
+          <a class="card-btn" href="#">Ver opções</a>
+        </article>
+
+
+        <article class="card" role="listitem">
+          <h3>Spas e Salões</h3>
+          <p>Sessões de bem-estar, estética e cuidados pessoais.</p>
+          <a class="card-btn" href="#">Ver opções</a>
+        </article>
+
+
+        <article class="card" role="listitem">
+          <h3>Eventos e Experiências</h3>
+          <p>Atividades e eventos selecionados para ocasiões especiais.</p>
+          <a class="card-btn" href="#">Ver opções</a>
+        </article>
+      </div>
+    </section>
+
+
+    <!-- ===================== -->
+    <!-- Depoimentos -->
+    <!-- ===================== -->
+    <section class="section" aria-labelledby="test-title">
+      <div class="container">
+        <h2 id="test-title">Histórias que brilham com a gente</h2>
+        <div class="testimonials" role="list">
+          <figure class="testimonial">
+            <blockquote class="text">"Ótima experiência: a reserva foi simples e o restaurante estava perfeito."</blockquote>
+            <figcaption class="name">— Mariana S., São Paulo</figcaption>
+          </figure>
+
+
+          <figure class="testimonial">
+            <blockquote class="text">"Usei para reservar um fim de semana na pousada. Tudo conforme descrito."</blockquote>
+            <figcaption class="name">— Pedro M., Recife</figcaption>
+          </figure>
+
+
+          <figure class="testimonial">
+            <blockquote class="text">"Agendei um spa para minha mãe, o atendimento foi muito acolhedor."</blockquote>
+            <figcaption class="name">— Laura F., Rio de Janeiro</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- ===================== -->
+  <!-- Rodapé -->
+  <!-- ===================== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h5>Institucional</h5>
+          <a href="#">Sobre Nós</a>
+          <a href="#">Política de Privacidade</a>
+          <a href="#">Termos de Uso</a>
+        </div>
+        <div>
+          <h5>Serviços</h5>
+          <a href="#">Hotéis</a>
+          <a href="#">Restaurantes</a>
+          <a href="#">Spas</a>
+        </div>
+        <div>
+          <h5>Ajuda</h5>
+          <a href="#">Contato</a>
+          <a href="#">FAQ</a>
+          <a href="#">Acessibilidade</a>
+        </div>
+        <div>
+          <h5>Redes Sociais</h5>
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+      <div class="copyright">© 2025 Mabelleshine. Todos os direitos reservados.</div>
+    </div>
+  </footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+

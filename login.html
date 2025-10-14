@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login — MabelleShine</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #fff0f5; /* rosa claro */
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .login-container {
+      width: 90%;
+      max-width: 400px;
+      background-color: #ffffff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .login-container h2 {
+      text-align: center;
+      color: #d47fa6; /* rosa médio */
+      margin-bottom: 30px;
+    }
+
+    .login-container label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .login-container input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: border 0.3s;
+    }
+
+    .login-container input:focus {
+      border-color: #d47fa6;
+      box-shadow: 0 0 8px rgba(212,127,166,0.4);
+      outline: none;
+    }
+
+    .login-container input.error {
+      border-color: red;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 12px;
+      background-color: #d47fa6;
+      color: #fff;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-bottom: 15px;
+    }
+
+    .login-container button:hover {
+      background-color: #b06085;
+    }
+
+    .login-container .social-login {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .social-login button {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      color: #fff;
+      font-size: 16px;
+      transition: opacity 0.3s;
+    }
+
+    .social-login button i {
+      margin-right: 8px;
+    }
+
+    .social-login button.facebook { background-color: #3b5998; }
+    .social-login button.google { background-color: #db4437; }
+    .social-login button.apple { background-color: #000000; }
+
+    .social-login button:hover {
+      opacity: 0.9;
+    }
+
+    .login-container .signup-link {
+      display: block;
+      text-align: center;
+      margin-top: 15px;
+      color: #d47fa6;
+      text-decoration: none;
+    }
+
+    .login-container .signup-link:hover {
+      text-decoration: underline;
+    }
+
+    .error-msg {
+      text-align: center;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    .error-msg.error {
+      color: red;
+    }
+
+    .error-msg.success {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>Entrar na MabelleShine</h2>
+
+    <div class="error-msg" id="error-msg"></div>
+
+    <form id="login-form">
+      <label for="email">E-mail</label>
+      <input type="email" id="email" placeholder="seuemail@exemplo.com" required>
+
+      <label for="password">Senha</label>
+      <input type="password" id="password" placeholder="********" required>
+
+      <button type="submit">Login</button>
+    </form>
+
+    <div class="social-login">
+      <button class="facebook"><i class="fab fa-facebook-f"></i>Facebook</button>
+      <button class="google"><i class="fab fa-google"></i>Google</button>
+      <button class="apple"><i class="fab fa-apple"></i>Apple</button>
+    </div>
+
+    <a class="signup-link" href="cadastro.html">Não tem conta? Cadastre-se</a>
+  </div>
+
+  <script>
+    const loginForm = document.getElementById('login-form');
+    const errorMsg = document.getElementById('error-msg');
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+
+    loginForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const email = emailInput.value.trim();
+      const password = passwordInput.value.trim();
+
+      emailInput.classList.remove('error');
+      passwordInput.classList.remove('error');
+      errorMsg.textContent = '';
+      errorMsg.classList.remove('error', 'success');
+
+      if(email === "teste@mabelle.com" && password === "123456") {
+        errorMsg.textContent = "Login realizado! Redirecionando...";
+        errorMsg.classList.add('success');
+
+        setTimeout(() => {
+          window.location.href = "reservas.html";
+        }, 1000);
+      } else {
+        errorMsg.textContent = "E-mail ou senha inválidos!";
+        errorMsg.classList.add('error');
+        emailInput.classList.add('error');
+        passwordInput.classList.add('error');
+      }
+    });
+
+    // Botões sociais (simulação)
+    document.querySelectorAll('.social-login button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        alert(`Login via ${btn.textContent.trim()} não implementado ainda!`);
+      });
+    });
+  </script>
+
+</body>
+</html>
