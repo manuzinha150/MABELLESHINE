@@ -1,0 +1,24 @@
+<main class="container">
+  <h2>Resumo da sua reserva</h2>
+  <div id="resumo"></div>
+  <button onclick="pagar()">Ir para Pagamento</button>
+</main>
+
+<script>
+  const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+  const resumo = document.getElementById('resumo');
+
+  if(carrinho.length === 0){
+    resumo.innerHTML = '<p>Não há reservas no carrinho.</p>';
+  } else {
+    carrinho.forEach(pousada => {
+      resumo.innerHTML += `<p>${pousada}</p>`;
+    });
+  }
+
+  function pagar(){
+    alert('Aqui você integraria seu sistema de pagamento!');
+    localStorage.removeItem('carrinho'); // limpa o carrinho
+    window.location.href = 'home.html';
+  }
+</script>

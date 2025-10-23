@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sobre Nós | Mabelleshine</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ======= Estilo adicional para esta página ======= */
+    .about-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 3rem;
+      padding: 4rem 0;
+    }
+
+    .about-sidebar {
+      background: #fafafa;
+      border-radius: 16px;
+      padding: 1.5rem;
+      height: fit-content;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+
+    .about-sidebar a {
+      display: block;
+      margin-bottom: 0.8rem;
+      color: #b07b8f; /* rose gold suave */
+      font-weight: 500;
+      text-decoration: none;
+      transition: 0.2s ease;
+    }
+
+    .about-sidebar a:hover {
+      color: #8a5d70;
+    }
+
+    .about-sidebar a.active {
+      background: #f7e9ec;
+      border-radius: 8px;
+      padding: 0.6rem 1rem;
+      color: #8a5d70;
+      font-weight: 600;
+    }
+
+    .about-content h1 {
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 1.2rem;
+    }
+
+    .about-content p {
+      line-height: 1.7;
+      color: #444;
+      margin-bottom: 1.2rem;
+      font-size: 1.05rem;
+    }
+
+    .about-content strong {
+      color: #8a5d70;
+    }
+
+    @media (max-width: 900px) {
+      .about-layout {
+        grid-template-columns: 1fr;
+      }
+      .about-sidebar {
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        gap: 1rem;
+      }
+      .about-sidebar a {
+        display: inline-block;
+        margin-bottom: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ===================== -->
+  <!-- Cabeçalho -->
+  <!-- ===================== -->
+  <header class="container" role="banner">
+    <div class="topbar">
+      <div class="brand" aria-label="Mabelleshine - Logotipo">
+        <div class="logo-mark" aria-hidden="true">
+          <img src="mabelleshine-removebg-preview.png" alt="Logotipo Mabelleshine" />
+        </div>
+      </div>
+
+      <nav class="primary" role="navigation" aria-label="Menu principal">
+        <a href="index.html">Início</a>
+        <a href="sobre.html" aria-current="page">Sobre Nós</a>
+        <a href="#">Serviços</a>
+        <a href="#">Blog</a>
+        <a href="#">Contato</a>
+      </nav>
+
+      <div class="access-tools" role="group" aria-label="Ferramentas de acessibilidade">
+        <button id="btnContrast" title="Alto contraste">Contraste</button>
+        <button id="btnFont" title="Aumentar fonte">A+</button>
+        <button class="cta" id="btnReserve">Reservar Agora</button>
+        <button class="login-btn">Login</button>
+        <button class="signup-btn">Cadastro</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== -->
+  <!-- Conteúdo -->
+  <!-- ===================== -->
+  <main class="container about-layout">
+    <!-- Menu lateral -->
+    <aside class="about-sidebar">
+      <a href="#" class="active" data-tab="sobre">Sobre a Mabelleshine</a>
+      <a href="#" data-tab="missao">Nossa Missão</a>
+      <a href="#" data-tab="valores">Nossos Valores</a>
+      <a href="#" data-tab="sustentabilidade">Sustentabilidade</a>
+      <a href="#" data-tab="trabalhe">Trabalhe Conosco</a>
+      <a href="#" data-tab="parcerias">Parcerias</a>
+      <a href="#" data-tab="fale">Fale Conosco</a>
+    </aside>
+
+    <!-- Conteúdo principal -->
+    <section class="about-content" id="about-content">
+      <h1>Sobre a Mabelleshine</h1>
+      <p>
+        Fundada no Brasil em <strong>2025</strong>, a <strong>Mabelleshine</strong> nasceu com o propósito de transformar o ato de reservar 
+        em uma experiência única, elegante e acolhedora. Criamos uma plataforma que conecta pessoas a momentos especiais — 
+        desde estadias encantadoras até experiências de bem-estar, lazer e gastronomia.
+      </p>
+
+      <p>
+        Acreditamos que <strong>cada momento pode brilhar</strong>. Por isso, trabalhamos para unir tecnologia, sofisticação e atendimento 
+        humanizado, tornando o processo de reserva simples, seguro e inspirador.
+      </p>
+
+      <p>
+        Ao investir continuamente em inovação, a Mabelleshine oferece uma experiência moderna e acessível, permitindo que nossos clientes 
+        encontrem facilmente o que procuram — seja uma viagem romântica, um fim de semana relaxante ou um evento inesquecível.
+      </p>
+
+      <p>
+        Hoje, a plataforma conecta <strong>centenas de parceiros e milhares de usuários</strong> em todo o Brasil, sempre com o compromisso 
+        de oferecer o melhor da hospitalidade, do conforto e da confiança. Não importa o destino — o que realmente importa é viver experiências 
+        que fazem o coração brilhar.
+      </p>
+
+      <p><strong>Mabelleshine:</strong> porque cada reserva merece um toque de brilho ✨</p>
+    </section>
+  </main>
+
+  <!-- ===================== -->
+  <!-- Rodapé -->
+  <!-- ===================== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h5>Institucional</h5>
+          <a href="sobre.html">Sobre Nós</a>
+          <a href="#">Política de Privacidade</a>
+          <a href="#">Termos de Uso</a>
+        </div>
+        <div>
+          <h5>Serviços</h5>
+          <a href="#">Hotéis</a>
+          <a href="#">Restaurantes</a>
+          <a href="#">Spas</a>
+        </div>
+        <div>
+          <h5>Ajuda</h5>
+          <a href="#">Contato</a>
+          <a href="#">FAQ</a>
+          <a href="#">Acessibilidade</a>
+        </div>
+        <div>
+          <h5>Redes Sociais</h5>
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+      <div class="copyright">© 2025 Mabelleshine. Todos os direitos reservados.</div>
+    </div>
+  </footer>
+
+  <!-- ===================== -->
+  <!-- Script de abas dinâmicas -->
+  <!-- ===================== -->
+  <script>
+    const conteudos = {
+      sobre: {
+        title: "Sobre a Mabelleshine",
+        text: `
+          Fundada no Brasil em <strong>2025</strong>, a <strong>Mabelleshine</strong> nasceu com o propósito de transformar o ato de reservar 
+          em uma experiência única, elegante e acolhedora. Criamos uma plataforma que conecta pessoas a momentos especiais — 
+          desde estadias encantadoras até experiências de bem-estar, lazer e gastronomia.
+
+          <br><br>
+          Acreditamos que <strong>cada momento pode brilhar</strong>. Por isso, trabalhamos para unir tecnologia, sofisticação e atendimento 
+          humanizado, tornando o processo de reserva simples, seguro e inspirador.
+
+          <br><br>
+          Ao investir continuamente em inovação, a Mabelleshine oferece uma experiência moderna e acessível, permitindo que nossos clientes 
+          encontrem facilmente o que procuram — seja uma viagem romântica, um fim de semana relaxante ou um evento inesquecível.
+
+          <br><br>
+          Hoje, a plataforma conecta <strong>centenas de parceiros e milhares de usuários</strong> em todo o Brasil, sempre com o compromisso 
+          de oferecer o melhor da hospitalidade, do conforto e da confiança. Não importa o destino — o que realmente importa é viver experiências 
+          que fazem o coração brilhar.
+
+          <br><br>
+          <strong>Mabelleshine:</strong> porque cada reserva merece um toque de brilho ✨
+        `
+      },
+      missao: {
+        title: "Nossa Missão",
+        text: `
+          Nossa missão é proporcionar experiências inesquecíveis, conectando pessoas a momentos especiais com sofisticação e conforto, 
+          garantindo praticidade, segurança e atenção a cada detalhe.
+        `
+      },
+      valores: {
+        title: "Nossos Valores",
+        text: `
+          Valorizamos <strong>transparência, confiança, inovação e hospitalidade</strong> em todas as interações com nossos clientes e parceiros, 
+          garantindo que cada experiência seja memorável e encantadora.
+        `
+      },
+      sustentabilidade: {
+        title: "Sustentabilidade",
+        text: `
+          Acreditamos em turismo responsável e práticas sustentáveis, reduzindo impactos ambientais e apoiando a comunidade local, 
+          integrando tecnologia e consciência ambiental em nossas operações.
+        `
+      },
+      trabalhe: {
+        title: "Trabalhe Conosco",
+        text: `
+          Buscamos talentos apaixonados por hospitalidade e tecnologia. Junte-se à equipe Mabelleshine e cresça conosco, 
+          contribuindo para experiências únicas e de alta qualidade.
+        `
+      },
+      parcerias: {
+        title: "Parcerias",
+        text: `
+          Valorizamos parcerias estratégicas com hotéis, pousadas e fornecedores que compartilham nossos valores de qualidade e experiência, 
+          fortalecendo nossa rede de serviços.
+        `
+      },
+      fale: {
+        title: "Fale Conosco",
+        text: `
+          Entre em contato com nossa equipe para dúvidas, sugestões ou suporte. Estamos sempre prontos para ajudar e garantir que sua experiência 
+          seja perfeita.
+        `
+      }
+    };
+
+    const tabs = document.querySelectorAll('.about-sidebar a');
+    const conteudoContainer = document.getElementById('about-content');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        // Remove classe active
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        // Atualiza conteúdo
+        const key = tab.dataset.tab;
+        conteudoContainer.innerHTML = `<h1>${conteudos[key].title}</h1><p>${conteudos[key].text}</p>`;
+      });
+    });
+  </script>
+</body>
+</html>

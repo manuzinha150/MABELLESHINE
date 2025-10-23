@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reservas | Mabelleshine</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      background: linear-gradient(180deg, #fff, #f9f3f6);
+      font-family: 'Arial', sans-serif;
+      margin:0; padding:0;
+    }
+
+    /* Header */
+    header { background:#fff; padding:20px 40px; display:flex; justify-content:space-between; align-items:center; box-shadow:0 2px 6px rgba(0,0,0,0.05); position:sticky; top:0; z-index:1000; }
+    header .logo { font-size:1.8rem; color:#B76E79; font-weight:bold; }
+    nav a { margin-left:15px; color:#333; font-weight:500; text-decoration:none; }
+    nav a[aria-current="page"] { color:#B76E79; font-weight:bold; }
+
+    /* Título e descrição */
+    .reservas-header { text-align: center; padding: 4rem 2rem 2rem; }
+    .reservas-header h1 { font-size: 2.8rem; color: #B76E79; margin-bottom: 1rem; font-family: 'Playfair Display', serif; letter-spacing:1px; }
+    .reservas-header p { color:#555; font-size:1.1rem; max-width:700px; margin:0 auto; line-height:1.6; }
+
+    /* Filtros */
+    .filtros { background:#fff; margin:2rem auto 3rem; border-radius:16px; box-shadow:0 4px 15px rgba(0,0,0,0.05); padding:1.5rem 2rem; display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; }
+    .filtros input, .filtros select { padding:0.7rem 1rem; border:1px solid #ddd; border-radius:10px; font-size:0.95rem; min-width:160px; }
+    .filtros button { background:#B76E79; color:#fff; border:none; border-radius:10px; padding:0.8rem 1.5rem; cursor:pointer; font-weight:500; transition:0.3s; }
+    .filtros button:hover { background:#a55b70; }
+
+    /* Grid de hotéis */
+    .hotel-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:2rem; padding:0 2rem 4rem; }
+    .hotel-card { background:#fff; border-radius:18px; box-shadow:0 6px 16px rgba(0,0,0,0.05); overflow:hidden; transition: transform 0.3s ease; border:1px solid #f3e8ec; }
+    .hotel-card:hover { transform:translateY(-6px); }
+    .hotel-card img { width:100%; height:240px; object-fit:cover; }
+    .hotel-info { padding:1.5rem; }
+    .hotel-info h2 { font-size:1.4rem; color:#8a5d70; margin-bottom:0.7rem; font-weight:600; }
+    .hotel-info p { color:#555; margin-bottom:0.5rem; line-height:1.5; font-size:0.95rem; }
+    .hotel-info .price { margin-top:1rem; }
+    .old-price { text-decoration:line-through; color:#999; font-size:0.9rem; }
+    .new-price { display:block; color:#B76E79; font-size:1.2rem; font-weight:600; }
+
+    /* Botão Disponibilidade */
+    .btn-disponibilidade { display:inline-block; margin-top:1rem; background:#B76E79; color:#fff; border:none; border-radius:10px; padding:0.7rem 1.3rem; font-weight:500; cursor:pointer; transition: background 0.3s ease; text-decoration:none; }
+    .btn-disponibilidade:hover { background:#a55b70; }
+
+    /* Call to action */
+    .call-to-action { text-align:center; background:#fff; padding:3rem 2rem; border-top:1px solid #f1dfe6; }
+    .call-to-action h3 { color:#B76E79; font-size:1.8rem; margin-bottom:0.5rem; }
+    .call-to-action p { color:#555; font-size:1rem; margin-bottom:1.5rem; }
+    .call-to-action button { background:#B76E79; color:#fff; border:none; border-radius:10px; padding:0.8rem 1.8rem; font-weight:500; font-size:1rem; cursor:pointer; }
+    .call-to-action button:hover { background:#a55b70; }
+
+    /* Footer */
+    footer { background:#fff; padding:2rem; border-top:1px solid #f1dfe6; }
+    footer h5 { color:#8a5d70; margin-bottom:0.8rem; }
+    footer a { display:block; color:#555; margin-bottom:0.3rem; font-size:0.95rem; }
+    .footer-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:2rem; }
+    .copyright { text-align:center; margin-top:2rem; color:#999; font-size:0.85rem; }
+
+    /* Avaliações em estrelas */
+    .rating { color:#FFD700; font-weight:bold; }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">Mabelleshine</div>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="sobre.html">Sobre Nós</a>
+      <a href="reservas.html" aria-current="page">Reservas</a>
+      <a href="#">Blog</a>
+      <a href="#">Contato</a>
+    </nav>
+  </header>
+
+  <!-- Título e filtros -->
+  <section class="reservas-header">
+    <h1>✨ Sua Estadia Perfeita Começa Aqui ✨</h1>
+    <p>Explore lugares deslumbrantes e viva experiências únicas com a elegância Mabelleshine. Escolha o destino, as datas e descubra o hotel que combina com o seu brilho.</p>
+  </section>
+
+  <div class="filtros">
+    <input type="text" placeholder="Destino" />
+    <input type="date" />
+    <input type="date" />
+    <select>
+      <option>Tipo de Quarto</option>
+      <option>Suíte Luxo</option>
+      <option>Standard</option>
+      <option>Família</option>
+    </select>
+    <select>
+      <option>Faixa de Preço</option>
+      <option>Até R$300</option>
+      <option>R$300 - R$600</option>
+      <option>Acima de R$600</option>
+    </select>
+    <button>Buscar</button>
+  </div>
+
+  <!-- Grid de Hotéis Detalhados -->
+  <main class="hotel-grid">
+    <!-- Hotel Atlântico -->
+    <article class="hotel-card">
+      <img src="hote.atla.jpg" alt="Hotel Atlântico Travel Copacabana" />
+      <div class="hotel-info">
+        <h2>Hotel Atlântico Travel Copacabana</h2>
+        <p><strong>Localização:</strong> Copacabana, Rio de Janeiro — 100m da praia, 500m do metrô, próximo a bares e restaurantes</p>
+        <p><strong>Quarto:</strong> Suíte Deluxe — 1 cama king-size, ar-condicionado, vista para o mar</p>
+        <p><strong>Descrição:</strong> Hotel moderno com decoração sofisticada, ideal para quem busca conforto e proximidade com a praia. Área de lazer completa com piscina e sauna.</p>
+        <p><strong>Avaliação:</strong> <span class="rating">★★★★☆</span> (4.5/5) — 230 avaliações</p>
+        <p><strong>Comodidades:</strong> Wi-Fi gratuito, Café da manhã incluso, Piscina, Spa, Estacionamento gratuito, Pet-friendly</p>
+        <p><strong>Políticas:</strong> Cancelamento grátis até 24h antes, Check-in 14h, Check-out 12h</p>
+        <div class="price">
+          <span class="old-price">R$ 580/noite</span>
+          <span class="new-price">R$ 429/noite</span>
+        </div>
+        <a href="disponibilidade.html?hotel=atlantic" class="btn-disponibilidade">Ver Disponibilidade</a>
+      </div>
+    </article>
+
+    <!-- Pousada Encanto -->
+    <article class="hotel-card">
+      <img src="113210971.jpg" alt="Pousada Encanto da Serra" />
+      <div class="hotel-info">
+        <h2>Pousada Encanto da Serra</h2>
+        <p><strong>Localização:</strong> Campos do Jordão — 1,2km do centro, próximo a trilhas e mirantes</p>
+        <p><strong>Quarto:</strong> Chalé Romântico — 1 cama queen-size, lareira, vista para a serra</p>
+        <p><strong>Descrição:</strong> Charmosa pousada em meio à natureza, perfeita para casais. Ambientes aconchegantes, jardim amplo e café da manhã caseiro incluso.</p>
+        <p><strong>Avaliação:</strong> <span class="rating">★★★★★</span> (4.8/5) — 145 avaliações</p>
+        <p><strong>Comodidades:</strong> Wi-Fi gratuito, Lareira, Estacionamento gratuito, Café da manhã incluso, Pet-friendly</p>
+        <p><strong>Políticas:</strong> Cancelamento gratuito até 48h antes, Check-in 15h, Check-out 11h</p>
+        <div class="price">
+          <span class="old-price">R$ 710/noite</span>
+          <span class="new-price">R$ 559/noite</span>
+        </div>
+        <a href="disponibilidade.html?hotel=encanto" class="btn-disponibilidade">Ver Disponibilidade</a>
+      </div>
+    </article>
+
+    <!-- Pousada Mar á Vista -->
+    <article class="hotel-card">
+      <img src="marvista.webp" alt="Pousada Mar á vista" />
+      <div class="hotel-info">
+        <h2>Pousada Mar á vista</h2>
+        <p><strong>Localização:</strong> Porto de Galinhas — 1km do centro, 200m da praia</p>
+        <p><strong>Quarto:</strong> Suíte Premium Vista Mar — 1 cama king-size, varanda com vista para o mar</p>
+        <p><strong>Descrição:</strong> Pousada exclusiva à beira-mar com piscina infinita, restaurante e spa. Ideal para famílias e casais que buscam luxo e tranquilidade.</p>
+        <p><strong>Avaliação:</strong> <span class="rating">★★★★☆</span> (4.2/5) — 310 avaliações</p>
+        <p><strong>Comodidades:</strong> Wi-Fi gratuito, All Inclusive, Spa, Piscina infinita, Restaurante, Estacionamento, Pet-friendly</p>
+        <p><strong>Políticas:</strong> Cancelamento gratuito até 72h antes, Check-in 14h, Check-out 12h</p>
+        <div class="price">
+          <span class="old-price">R$ 980/noite</span>
+          <span class="new-price">R$ 799/noite</span>
+        </div>
+        <a href="disponibilidade.html?hotel=marvista" class="btn-disponibilidade">Ver Disponibilidade</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- Call to Action -->
+  <div class="call-to-action">
+    <h3>Pronta para brilhar em sua próxima viagem?</h3>
+    <p>Encontre destinos incríveis, conforto, beleza e hospitalidade no estilo Mabelleshine.</p>
+    <button>Monte seu pacote agora</button>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h5>Institucional</h5>
+          <a href="sobre.html">Sobre Nós</a>
+          <a href="#">Política de Privacidade</a>
+          <a href="#">Termos de Uso</a>
+        </div>
+        <div>
+          <h5>Serviços</h5>
+          <a href="#">Hotéis</a>
+          <a href="#">Restaurantes</a>
+          <a href="#">Spas</a>
+        </div>
+        <div>
+          <h5>Ajuda</h5>
+          <a href="#">Contato</a>
+          <a href="#">FAQ</a>
+          <a href="#">Acessibilidade</a>
+        </div>
+        <div>
+          <h5>Redes Sociais</h5>
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+      <div class="copyright">© 2025 Mabelleshine. Todos os direitos reservados.</div>
+    </div>
+  </footer>
+</body>
+</html>

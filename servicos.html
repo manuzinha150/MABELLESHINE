@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mabelleshine - Serviços</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background-color: #fff8fa;
+      color: #333;
+    }
+
+    header {
+      background-color: #ffd6e8;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+      font-size: 1.8em;
+      font-weight: 700;
+      color: #b83b6a;
+    }
+
+    nav a {
+      color: #b83b6a;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff85b8;
+    }
+
+    .hero {
+      background: linear-gradient(to right, #ffe4ef, #ffd6e8);
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .hero h1 {
+      font-size: 2.8em;
+      color: #b83b6a;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 1.1em;
+      color: #555;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .services-section {
+      padding: 60px 40px;
+      text-align: center;
+    }
+
+    .services-section h2 {
+      color: #b83b6a;
+      font-size: 2em;
+      margin-bottom: 40px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      justify-items: center;
+    }
+
+    .service-card {
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 25px;
+      width: 100%;
+      max-width: 300px;
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-card img {
+      width: 80px;
+      margin-bottom: 15px;
+    }
+
+    .service-card h3 {
+      color: #b83b6a;
+      margin-bottom: 10px;
+      font-size: 1.2em;
+    }
+
+    .service-card p {
+      font-size: 0.95em;
+      color: #555;
+    }
+
+    .diferenciais {
+      background-color: #ffe9f3;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .diferenciais h2 {
+      color: #b83b6a;
+      margin-bottom: 20px;
+    }
+
+    .diferenciais p {
+      max-width: 600px;
+      margin: 0 auto;
+      color: #555;
+      font-size: 1em;
+    }
+
+    footer {
+      background-color: #ffd6e8;
+      padding: 20px 10px;
+      text-align: center;
+      color: #b83b6a;
+      font-size: 0.9em;
+      border-top: 2px solid #f4a6c3;
+    }
+
+    footer a {
+      color: #b83b6a;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      color: #ff85b8;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2em;
+      }
+
+      .services-grid {
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">Mabelleshine</div>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="reservas.html">Reservas</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Nossos Serviços</h1>
+    <p>Na Mabelleshine, oferecemos serviços feitos com amor, qualidade e cuidado para que cada cliente brilhe ainda mais.</p>
+  </section>
+
+  <section class="services-section">
+    <h2>O que oferecemos</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/889/889646.png" alt="Cabelo">
+        <h3>Cabelos</h3>
+        <p>Tratamentos, cortes, coloração e penteados para todas as ocasiões.</p>
+      </div>
+      <div class="service-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/3159/3159724.png" alt="Unhas">
+        <h3>Unhas</h3>
+        <p>Manicure e pedicure com esmaltes de alta durabilidade e cuidado total.</p>
+      </div>
+      <div class="service-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="Maquiagem">
+        <h3>Maquiagem</h3>
+        <p>Beleza natural ou glamourosa — o toque perfeito para realçar seu brilho.</p>
+      </div>
+      <div class="service-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Massagem">
+        <h3>Massagem</h3>
+        <p>Relaxamento corporal e terapias personalizadas para o seu bem-estar.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="diferenciais">
+    <h2>Por que escolher a Mabelleshine?</h2>
+    <p>Oferecemos um ambiente acolhedor, produtos de alta qualidade e profissionais apaixonados pelo que fazem. Cada detalhe é pensado para proporcionar uma experiência inesquecível a você.</p>
+  </section>
+
+  <footer id="contato">
+    <p>© 2025 Mabelleshine. Todos os direitos reservados.</p>
+    <p><a href="mailto:contato@mabelleshine.com">contato@mabelleshine.com</a> | <a href="#">Instagram</a></p>
+  </footer>
+</body>
+</html>

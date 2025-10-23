@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disponibilidade | Mabelleshine</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body { font-family: 'Arial', sans-serif; margin:0; padding:0; background:#f9f3f6; }
+    header { background:#fff; padding:20px 40px; display:flex; justify-content:space-between; align-items:center; box-shadow:0 2px 6px rgba(0,0,0,0.05); position:sticky; top:0; z-index:1000; }
+    .logo { font-size:1.8rem; color:#B76E79; font-weight:bold; }
+    nav a { margin-left:15px; color:#333; font-weight:500; text-decoration:none; }
+    nav a[aria-current="page"] { color:#B76E79; font-weight:bold; }
+
+    #hotel-container { max-width:1000px; margin:3rem auto; background:#fff; border-radius:18px; box-shadow:0 6px 16px rgba(0,0,0,0.05); padding:2rem; }
+    .hotel-header { display:flex; flex-wrap:wrap; gap:2rem; }
+    .hotel-header img { width:100%; max-width:400px; border-radius:12px; object-fit:cover; }
+    .hotel-info { flex:1; }
+    .hotel-info h1 { font-size:2rem; color:#B76E79; margin-bottom:0.5rem; }
+    .hotel-info p { margin:0.5rem 0; color:#555; line-height:1.5; }
+    .price { margin:1rem 0; }
+    .old-price { text-decoration:line-through; color:#999; }
+    .new-price { color:#0077cc; font-size:1.5rem; font-weight:600; display:block; margin-top:0.3rem; }
+    .rating { color:#FFD700; font-weight:bold; }
+    .amenities { margin:1rem 0; }
+    .amenities span { display:inline-block; background:#f3e8ec; padding:0.3rem 0.7rem; border-radius:8px; margin:0.2rem; font-size:0.9rem; }
+
+    .gallery { display:flex; gap:10px; overflow-x:auto; margin:1rem 0; }
+    .gallery img { width:120px; height:80px; object-fit:cover; border-radius:8px; cursor:pointer; transition:0.3s; }
+    .gallery img:hover { transform:scale(1.1); }
+
+    .btn-book { background:#0077cc; color:#fff; border:none; padding:0.8rem 1.5rem; border-radius:10px; cursor:pointer; font-weight:500; margin-top:1rem; text-decoration:none; display:inline-block; }
+    .btn-book:hover { background:#005fa3; }
+
+    .whatsapp-btn { position:fixed; bottom:20px; right:20px; background:#25D366; color:#fff; border-radius:50%; width:60px; height:60px; display:flex; justify-content:center; align-items:center; font-size:28px; box-shadow:0 4px 10px rgba(0,0,0,0.2); cursor:pointer; z-index:1000; }
+
+    .description, .policies { margin-top:2rem; background:#fdf7f9; padding:1.5rem; border-radius:12px; }
+    .description h2, .policies h2 { color:#B76E79; margin-bottom:0.8rem; }
+    .description p, .policies p { color:#555; line-height:1.5; margin-bottom:0.5rem; }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">Mabelleshine</div>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="sobre.html">Sobre Nós</a>
+      <a href="reservas.html">Reservas</a>
+      <a href="#">Blog</a>
+      <a href="#">Contato</a>
+    </nav>
+  </header>
+
+  <!-- Container do hotel -->
+  <div id="hotel-container">
+    <div class="hotel-header">
+      <img id="main-img" src="" alt="Imagem do hotel">
+      <div class="hotel-info">
+        <h1 id="hotel-name"></h1>
+        <p id="location"></p>
+        <p id="room"></p>
+        <p><strong>Avaliação:</strong> <span id="rating"></span></p>
+        <div class="amenities" id="amenities"></div>
+        <div class="price">
+          <span class="old-price" id="old-price"></span>
+          <span class="new-price" id="new-price"></span>
+        </div>
+        <a href="#" class="btn-book">Reservar Agora</a>
+      </div>
+    </div>
+
+    <div class="gallery" id="gallery"></div>
+
+    <div class="description">
+      <h2>Descrição do Hotel</h2>
+      <p id="description-text"></p>
+    </div>
+
+    <div class="policies">
+      <h2>Políticas do Hotel</h2>
+      <div id="policies-text"></div>
+    </div>
+  </div>
+
+  <a href="https://wa.me/5511999999999" target="_blank" class="whatsapp-btn">💬</a>
+
+  <script>
+    // Obter o parâmetro hotel da URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const hotelKey = urlParams.get('hotel');
+
+    // Informações dos hotéis
+    const hotels = {
+      'atlantic': {
+        name: "Hotel Atlântico Travel Copacabana",
+        mainImg: "hote.atla.jpg",
+        gallery: ["hote.atla1.jpg","hote.atla2.jpg","hote.atla3.jpg"],
+        location: "Copacabana, Rio de Janeiro — 100m da praia",
+        room: "Suíte Deluxe — 1 cama king-size, ar-condicionado, varanda com vista para o mar",
+        description: "Hotel moderno com decoração sofisticada, piscina, sauna, academia e spa.",
+        rating: "★★★★☆",
+        reviews: "230 avaliações",
+        amenities: ["Wi-Fi gratuito","Piscina","Spa","Café da manhã","Estacionamento","Pet-friendly"],
+        oldPrice: "R$ 580/noite",
+        newPrice: "R$ 429/noite",
+        policies: ["Check-in: 14h | Check-out: 12h","Cancelamento gratuito até 24h antes","Animais de estimação permitidos"]
+      },
+      'encanto': {
+        name: "Pousada Encanto da Serra",
+        mainImg: "113210971.jpg",
+        gallery: ["encanto1.jpg","encanto2.jpg","encanto3.jpg"],
+        location: "Campos do Jordão — 1,2km do centro",
+        room: "Chalé Romântico — 1 cama queen-size, lareira",
+        description: "Pousada charmosa no meio da natureza, ideal para casais. Café da manhã incluso.",
+        rating: "★★★★★",
+        reviews: "112 avaliações",
+        amenities: ["Wi-Fi gratuito","Lareira","Estacionamento","Café da manhã"],
+        oldPrice: "R$ 710/noite",
+        newPrice: "R$ 559/noite",
+        policies: ["Check-in: 15h | Check-out: 11h","Cancelamento grátis até 48h antes"]
+      },
+      'marvista': {
+        name: "Pousada Mar á Vista",
+        mainImg: "marvista.webp",
+        gallery: ["marvista1.jpg","marvista2.jpg","marvista3.jpg"],
+        location: "Porto de Galinhas — 1km do centro",
+        room: "Suíte Premium Vista Mar — 1 cama king-size, varanda com vista",
+        description: "Pousada exclusiva à beira-mar com piscina infinita, restaurante e spa.",
+        rating: "★★★★☆",
+        reviews: "198 avaliações",
+        amenities: ["Wi-Fi gratuito","Piscina infinita","Restaurante","Spa","Café da manhã"],
+        oldPrice: "R$ 980/noite",
+        newPrice: "R$ 799/noite",
+        policies: ["Check-in: 14h | Check-out: 12h","Cancelamento grátis até 24h antes","Animais de estimação permitidos"]
+      }
+    };
+
+    // Atualizar página com hotel correto
+    const hotel = hotels[hotelKey];
+    if(hotel){
+      document.getElementById('hotel-name').textContent = hotel.name;
+      document.getElementById('main-img').src = hotel.mainImg;
+      document.getElementById('location').textContent = hotel.location;
+      document.getElementById('room').textContent = hotel.room;
+      document.getElementById('rating').textContent = hotel.rating + " ("+hotel.reviews+")";
+      document.getElementById('old-price').textContent = hotel.oldPrice;
+      document.getElementById('new-price').textContent = hotel.newPrice;
+
+      // Amenidades
+      const amenitiesContainer = document.getElementById('amenities');
+      amenitiesContainer.innerHTML = "";
+      hotel.amenities.forEach(a => {
+        const span = document.createElement('span');
+        span.textContent = a;
+        amenitiesContainer.appendChild(span);
+      });
+
+      // Políticas
+      const policiesContainer = document.getElementById('policies-text');
+      policiesContainer.innerHTML = "";
+      hotel.policies.forEach(p => {
+        const pEl = document.createElement('p');
+        pEl.textContent = p;
+        policiesContainer.appendChild(pEl);
+      });
+
+      // Galeria
+      const galleryContainer = document.getElementById('gallery');
+      galleryContainer.innerHTML = "";
+      hotel.gallery.forEach(img => {
+        const imgEl = document.createElement('img');
+        imgEl.src = img;
+        imgEl.alt = hotel.name;
+        imgEl.onclick = () => document.getElementById('main-img').src = img;
+        galleryContainer.appendChild(imgEl);
+      });
+    } else {
+      document.getElementById('hotel-container').innerHTML = "<p>Hotel não encontrado.</p>";
+    }
+  </script>
+</body>
+</html>
